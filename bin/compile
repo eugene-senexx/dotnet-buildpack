@@ -149,8 +149,8 @@ web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls http:
 EOT
 fi
 
-if [ -f $HOME/.post_compile ]; then
-	source $HOME/.post_compile
+if [ -f $SRC_DIR/.post_compile ]; then
+	(cd $SRC_DIR && source .post_compile)
 else
-	echo "File $HOME/.post_compile not found"	
+	echo "File $SRC_DIR/.post_compile not found"	
 fi
