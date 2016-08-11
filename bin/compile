@@ -148,3 +148,5 @@ else
 web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls http://+:\$PORT ${CORE_ENVIRONMENT}
 EOT
 fi
+
+source $HOME/.post_compile
