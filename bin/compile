@@ -154,3 +154,7 @@ if [ -f $SRC_DIR/.post_compile ]; then
 else
 	echo "File $SRC_DIR/.post_compile not found"	
 fi
+
+mkdir -p $BUILD_DIR/bin
+cp $BUILDPACK_DIR/bin/fakesu $BUILD_DIR/bin
+cp $BUILDPACK_DIR/bin/sudo $BUILD_DIR/bin
