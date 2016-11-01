@@ -62,6 +62,7 @@ DEPLOYMENT_FILE_LOCATION=${SRC_DIR}/.deployment
 if [ -n "$(find ${SRC_DIR}/global.json)" ]; then
 	echo "Get version from global.json"
 	CORE_VERSION=$(ruby -rjson -e "j = JSON.parse(File.open('${SRC_DIR}/global.json','r:bom|utf-8').read); unless j['sdk'].nil? ; puts j['sdk']['version'];end")
+	echo "Version in global.json is ${CORE_VERSION}"
 	if [ -z "${CORE_VERSION}" ]; then
 		CORE_VERSION="latest"
 	elif [[ "${CORE_VERSION}" != "latest" ]]; then
